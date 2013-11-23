@@ -1,4 +1,4 @@
-include ':chromium:base',
+include ':chromium:base', ':cordova-chromium', ':cordova', ':cordova-chromium-sample',
   ':chromium:cacheinvalidation',
   ':chromium:chrome',
   ':chromium:components',

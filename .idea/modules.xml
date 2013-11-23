@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Android-Chromium.iml" filepath="$PROJECT_DIR$/Android-Chromium.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-chromium.iml" filepath="$PROJECT_DIR$/android-chromium.iml" />
       <module fileurl="file://$PROJECT_DIR$/chromium/android-webview/android-webview.iml" filepath="$PROJECT_DIR$/chromium/android-webview/android-webview.iml" />
       <module fileurl="file://$PROJECT_DIR$/chromium/base/base.iml" filepath="$PROJECT_DIR$/chromium/base/base.iml" />
@@ -11,6 +12,9 @@
       <module fileurl="file://$PROJECT_DIR$/chromium/components/components.iml" filepath="$PROJECT_DIR$/chromium/components/components.iml" />
       <module fileurl="file://$PROJECT_DIR$/chromium/content/content.iml" filepath="$PROJECT_DIR$/chromium/content/content.iml" />
       <module fileurl="file://$PROJECT_DIR$/chromium/content-shell/content-shell.iml" filepath="$PROJECT_DIR$/chromium/content-shell/content-shell.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cordova/cordova.iml" filepath="$PROJECT_DIR$/cordova/cordova.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cordova-chromium/cordova-chromium.iml" filepath="$PROJECT_DIR$/cordova-chromium/cordova-chromium.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cordova-chromium-sample/cordova-chromium-sample.iml" filepath="$PROJECT_DIR$/cordova-chromium-sample/cordova-chromium-sample.iml" />
       <module fileurl="file://$PROJECT_DIR$/chromium/eyesfree/eyesfree.iml" filepath="$PROJECT_DIR$/chromium/eyesfree/eyesfree.iml" />
       <module fileurl="file://$PROJECT_DIR$/chromium/media/media.iml" filepath="$PROJECT_DIR$/chromium/media/media.iml" />
       <module fileurl="file://$PROJECT_DIR$/chromium/net/net.iml" filepath="$PROJECT_DIR$/chromium/net/net.iml" />

@@ -55,7 +55,7 @@ configure(subprojects.findAll { project ->
      'net',
      'protobuf',
      'sync',
-     'ui'].contains(project.name)
+     'ui', 'cordova', 'cordova-chromium'].contains(project.name)
   }) {
   apply plugin: 'android-library'
   // the rest is boilerplate
@@ -66,7 +66,7 @@ configure(subprojects.findAll { project ->
 configure(subprojects.findAll { project ->
   ['content-shell',
    'android-webview',
-   'testshell'].contains(project.name) }) {
+   'testshell', 'cordova-chromium-sample'].contains(project.name) }) {
   apply plugin: 'android'
   // the rest is boilerplate
   configureAndroidProject it

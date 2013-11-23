@@ -1,0 +1,50 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.6.+'
+    }
+}
+apply plugin: 'android'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 18
+    buildToolsVersion "19.0.0"
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+    }
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 18
+    }
+}
+
+dependencies {
+    compile project(':chromium:base')
+    compile project(':chromium:content')
+    compile project(':chromium:eyesfree')
+    compile project(':chromium:media')
+    compile project(':chromium:net')
+    compile project(':chromium:ui')
+    compile project(':cordova')
+    compile fileTree(dir: "${buildDir}/native/", include: '*.jar')
+}
+
+tasks.withType(Compile) {
+    compileTask -> compileTask.dependsOn(copyNativeLibsToJar)
+}
