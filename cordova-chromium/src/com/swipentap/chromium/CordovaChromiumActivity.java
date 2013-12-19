@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import org.chromium.content.app.ContentMain;
 import org.chromium.content.app.LibraryLoader;
 import org.chromium.content.browser.ActivityContentVideoViewClient;
 import org.chromium.content.browser.ContentVideoViewClient;
@@ -53,36 +54,7 @@ public class CordovaChromiumActivity extends Activity {
             return;
         }
 
-        //CommandLine.getInstance().appendSwitch("allow-file-access-from-files");
         CommandLine.getInstance().appendSwitch("disable-web-security");
-        /*setContentView(R.layout.content_shell_activity);
-        mShellManager = (ShellManager) findViewById(R.id.shell_container);
-        mWindowAndroid = new WindowAndroid(this);
-        mWindowAndroid.restoreInstanceState(savedInstance);
-        mShellManager.setWindow(mWindowAndroid);
-
-
-        CommandLine.getInstance().appendSwitch("allow-file-access-from-files");
-
-        if ( BrowserStartupController.get(this).startBrowserProcessesSync(0) ) {
-            this.finishInitialization(savedInstance);
-        } else {
-            this.initializationFailed();
-        }*/
-
-
-        /*BrowserStartupController.get(this).startBrowserProcessesAsync(
-                new BrowserStartupController.StartupCallback() {
-                    @Override
-                    public void onSuccess(boolean alreadyStarted) {
-                        finishInitialization(savedInstance);
-                    }
-
-                    @Override
-                    public void onFailure() {
-                        initializationFailed();
-                    }
-                });*/
     }
 
     private void waitForDebuggerIfNeeded() {
@@ -102,6 +74,10 @@ public class CordovaChromiumActivity extends Activity {
         if (savedInstanceState != null
                 && savedInstanceState.containsKey(ACTIVE_SHELL_URL_KEY)) {
             shellUrl = savedInstanceState.getString(ACTIVE_SHELL_URL_KEY);
+        }
+        Shell activeShell = getActiveShell();
+        if (activeShell == null) {
+            ContentMain.start();
         }
         getActiveContentView().setContentViewClient(new ContentViewClient() {
             @Override
@@ -142,6 +118,7 @@ public class CordovaChromiumActivity extends Activity {
 
         mWindowAndroid.saveInstanceState(outState);
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
