@@ -68,4 +68,9 @@ import org.json.JSONException;
     public String retrieveJsMessages() {
         return jsMessageQueue.popAndEncode();
     }
+
+    @JavascriptInterface
+    public String retrieveJsMessages(boolean online) {
+        return jsMessageQueue.popAndEncode();
+    }
 }

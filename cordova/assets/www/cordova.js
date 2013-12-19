@@ -970,6 +970,8 @@ function hookOnlineApis() {
     cordova.addWindowEventHandler('offline');
     document.addEventListener('online', proxyEvent, false);
     document.addEventListener('offline', proxyEvent, false);
+    document.addEventListener('online', pollOnceFromOnlineEvent, false);
+    document.addEventListener('offline', pollOnceFromOnlineEvent, false);
 }
 
 hookOnlineApis();

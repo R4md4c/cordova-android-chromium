@@ -300,7 +300,7 @@ public class CordovaActivity extends CordovaChromiumActivity implements CordovaI
         if (mStartupUrl != null) {
             mShellManager.setStartupUrl(mStartupUrl);
         }
-        if ( BrowserStartupController.get(this).startBrowserProcessesSync(1) ) {
+        if ( BrowserStartupController.get(this).startBrowserProcessesSync(BrowserStartupController.MAX_RENDERERS_SINGLE_PROCESS) ) {
             finishInitialization(savedInstanceState);
             CordovaWebView webView = (CordovaWebView) mShellManager.getActiveShell();
             webView.setup();

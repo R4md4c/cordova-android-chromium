@@ -124,6 +124,13 @@ public class CordovaChromiumView extends Shell {
         return this.getContentView().getUrl();
     }
 
+    public void setNetworkAvailable(boolean online) {
+        if (online) {
+            this.loadUrl("javascript:navigator.onLine = true;cordova.fireDocumentEvent('online');cordova.fireWindowEvent('online');");
+        } else {
+            this.loadUrl("javascript:navigator.onLine = false;cordova.fireDocumentEvent('offline');cordova.fireWindowEvent('offline');");
+        }
+    }
     @SuppressWarnings("unused")
     @CalledByNative
     protected void onLoadProgressChanged(double progress) {
